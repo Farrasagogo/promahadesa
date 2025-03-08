@@ -944,7 +944,7 @@ function App() {
                 </div>
                 <div className="transform transition-all duration-300 group-hover:translate-x-2">
                   <h4 className="font-bold text-rose-700">Alamat</h4>
-                  <p className="text-gray-600">Jl. Foodie Paradise No. 123, Jakarta Selatan, 12345</p>
+                  <p className="text-gray-600">Desa Karangpring, RT 003/RW 008, Sukorambi, Jember</p>
                 </div>
               </div>
               
@@ -968,7 +968,7 @@ function App() {
                 </div>
                 <div className="transform transition-all duration-300 group-hover:translate-x-2">
                   <h4 className="font-bold text-rose-700">Email</h4>
-                  <p className="text-gray-600">info@gourmetfoods.com</p>
+                  <p className="text-gray-600">roseteakarangpring@gmail.com</p>
                 </div>
               </div>
               
