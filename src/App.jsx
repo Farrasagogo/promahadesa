@@ -448,36 +448,12 @@ function App() {
                   description: "Menghubungkan para petani desa dan memastikan praktek pertanian berkelanjutan.",
                   image: "/placeholder.webp"
                 },
-                {
-                  name: "Adi Prasetyo",
-                  role: "Kepala Produksi",
-                  description: "Mengawasi seluruh proses produksi untuk menjamin konsistensi kualitas produk.",
-                  image: "/placeholder.webp"
-                },
-                {
-                  name: "Siti Rahma",
-                  role: "Manajer Kualitas",
-                  description: "Memastikan setiap produk memenuhi standar kualitas tertinggi sebelum didistribusikan.",
-                  image: "/placeholder.webp"
-                },
-                {
-                  name: "Pak Joko",
-                  role: "Petani Inovator",
-                  description: "Mengembangkan metode organik baru untuk meningkatkan hasil dan kualitas mawar.",
-                  image: "/placeholder.webp"
-                },
-                {
-                  name: "Budi Santoso",
-                  role: "Kepala Pengembangan",
-                  description: "Terus meneliti dan mengembangkan varian produk baru dengan bahan berkualitas.",
-                  image: "/placeholder.webp"
-                }
               ].map((member, index) => (
                 <div key={index} className="text-center group">
-                  <div 
-                    className="h-48 w-48 mx-auto bg-gray-100 rounded-full bg-cover bg-center mb-5 shadow-lg transition-transform duration-300 group-hover:scale-105 border-4 border-pink-100"
-                    style={{ backgroundImage: `url(${member.image})` }}
-                  />
+                  <div
+  className="h-24 w-24 sm:h-32 sm:w-32 md:h-40 md:w-40 lg:h-48 lg:w-48 xl:h-56 xl:w-56 mx-auto bg-gray-100 rounded-full bg-cover bg-center mb-5 shadow-lg transition-transform duration-300 group-hover:scale-105 border-4 border-pink-100"
+  style={{ backgroundImage: `url(${member.image})` }}
+/>
                   <h4 className="font-semibold text-lg text-gray-900 mb-1">{member.name}</h4>
                   <p className="text-pink-500 font-medium mb-2">{member.role}</p>
                   <p className="text-gray-600 text-sm px-4">{member.description}</p>
@@ -836,6 +812,251 @@ function App() {
     </div>
   </div>
 </section>
+{/* Product Gallery Section - Rose Tea Theme */}
+<section className="bg-rose-50 py-16">
+  <div className="container mx-auto px-6">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-serif font-bold mb-4 text-rose-900">Galeri Produk Rose Tea</h2>
+      <p className="text-rose-700 max-w-2xl mx-auto">
+        Nikmati keindahan koleksi teh mawar premium kami yang dibuat dengan penuh cinta dan ketelitian.
+      </p>
+      <div className="w-24 h-1 bg-rose-300 mx-auto mt-6"></div>
+    </div>
+
+    {/* Gallery Grid */}
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {Array.from({ length: 8 }).map((_, index) => (
+        <div key={index} className="group relative overflow-hidden rounded-xl shadow-md border border-rose-100">
+          <img 
+            src="/placeholder.webp" 
+            alt={`Rose Tea Gallery image ${index + 1}`} 
+            className="w-full h-64 object-cover transition duration-500 transform group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-rose-900 to-transparent opacity-0 group-hover:opacity-90 transition-opacity flex items-center justify-center">
+            <button className="bg-white text-rose-700 rounded-full p-3 hover:bg-rose-100 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+              </svg>
+            </button>
+          </div>
+          <div className="absolute bottom-0 left-0 right-0 bg-white bg-opacity-80 p-3 transform translate-y-full group-hover:translate-y-0 transition-transform">
+            <h4 className="font-serif font-medium text-rose-800">Rose Tea Collection {index + 1}</h4>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Process Photos */}
+    <div className="mt-20">
+      <h3 className="text-2xl font-serif font-bold mb-8 text-center text-rose-900">Proses Pembuatan <span className="italic">Rose Tea</span></h3>
+      <div className="flex justify-center mb-10">
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {[
+          {
+            title: "Pemilihan Kelopak Mawar",
+            description: "Setiap kelopak mawar dipilih dengan hati-hati saat mekar sempurna untuk mendapatkan aroma terbaik."
+          },
+          {
+            title: "Pengolahan Lembut",
+            description: "Kelopak mawar dikeringkan secara perlahan untuk mempertahankan khasiat dan warna alaminya."
+          },
+          {
+            title: "Pengemasan Eksklusif",
+            description: "Produk dikemas dalam wadah khusus yang menjaga aroma dan kelembutan teh mawar kami."
+          }
+        ].map((item, index) => (
+          <div key={index} className="overflow-hidden rounded-xl shadow-lg border border-rose-200 hover:shadow-xl transition-shadow">
+            <div className="relative">
+              <img 
+                src="/placeholder.webp" 
+                alt={item.title} 
+                className="w-full h-56 object-cover"
+              />
+              <div className="absolute top-4 right-4 bg-rose-100 text-rose-800 w-10 h-10 rounded-full flex items-center justify-center font-serif font-bold">
+                {index + 1}
+              </div>
+            </div>
+            <div className="p-6 bg-white">
+              <h4 className="font-serif font-bold text-xl mb-3 text-rose-800">{item.title}</h4>
+              <p className="text-rose-600">{item.description}</p>
+              <div className="w-12 h-1 bg-rose-200 mt-4"></div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    {/* Testimonial */}
+    <div className="mt-20 bg-white p-8 rounded-xl shadow-md border border-rose-100">
+      <div className="flex flex-col items-center">
+        <svg className="h-10 w-10 text-rose-300 mb-4" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"></path>
+        </svg>
+        <p className="text-rose-800 italic text-center text-lg mb-6 font-serif">
+          "Rose Tea kami tidak hanya menawarkan kelezatan rasa, tetapi juga memberikan pengalaman menikmati teh yang menenangkan dan menyegarkan jiwa."
+        </p>
+        <div className="flex items-center">
+          <div className="w-12 h-12 rounded-full bg-rose-200 flex items-center justify-center mr-3">
+            <span className="text-rose-700 font-serif font-bold text-lg">A</span>
+          </div>
+          <div>
+            <h5 className="font-medium text-rose-900">Andi Wibowo</h5>
+            <p className="text-rose-500 text-sm">Tea Master</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{/* Rosetea Contact Section with Deep Styling */}
+<section className="py-16 bg-gradient-to-b from-rose-50 to-white">
+  <div className="container mx-auto px-4">
+    <div className="max-w-4xl mx-auto">
+      {/* Section Header */}
+      <div className="text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-rose-800 mb-3">Hubungi Kami</h2>
+        <div className="w-24 h-1 bg-rose-300 mx-auto mb-4"></div>
+        <p className="text-rose-600">Kami siap melayani pertanyaan dan pesanan Anda</p>
+      </div>
+      
+      {/* Contact Content */}
+      <div className="flex flex-col md:flex-row gap-8">
+        {/* Contact Info Card */}
+        <div className="w-full md:w-1/2">
+          <div className="bg-white rounded-xl p-8 shadow-lg border-t-4 border-rose-400 h-full transform transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <h3 className="text-2xl font-bold mb-8 text-rose-700 flex items-center">
+              <span className="bg-rose-100 text-rose-500 p-2 rounded-full mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </span>
+              Informasi Kontak
+            </h3>
+            
+            <div className="space-y-6">
+              <div className="flex items-start group">
+                <div className="bg-rose-400 rounded-full p-3 mr-4 mt-1 shadow-sm group-hover:bg-rose-500 transition-colors duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div className="transform transition-all duration-300 group-hover:translate-x-2">
+                  <h4 className="font-bold text-rose-700">Alamat</h4>
+                  <p className="text-gray-600">Jl. Foodie Paradise No. 123, Jakarta Selatan, 12345</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start group">
+                <div className="bg-rose-400 rounded-full p-3 mr-4 mt-1 shadow-sm group-hover:bg-rose-500 transition-colors duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <div className="transform transition-all duration-300 group-hover:translate-x-2">
+                  <h4 className="font-bold text-rose-700">Telepon</h4>
+                  <p className="text-gray-600">+62 812-3456-7890</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start group">
+                <div className="bg-rose-400 rounded-full p-3 mr-4 mt-1 shadow-sm group-hover:bg-rose-500 transition-colors duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div className="transform transition-all duration-300 group-hover:translate-x-2">
+                  <h4 className="font-bold text-rose-700">Email</h4>
+                  <p className="text-gray-600">info@gourmetfoods.com</p>
+                </div>
+              </div>
+              
+              <div className="flex items-start group">
+                <div className="bg-rose-400 rounded-full p-3 mr-4 mt-1 shadow-sm group-hover:bg-rose-500 transition-colors duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div className="transform transition-all duration-300 group-hover:translate-x-2">
+                  <h4 className="font-bold text-rose-700">Jam Operasional</h4>
+                  <p className="text-gray-600">Senin - Jumat: 08.00 - 18.00<br />Sabtu: 09.00 - 16.00</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Media */}
+            <div className="mt-12 pt-6 border-t border-rose-100">
+              <h4 className="font-bold mb-6 text-rose-700">Ikuti Kami di Media Sosial</h4>
+              <div className="flex space-x-4">
+                <a href="#" className="bg-rose-50 hover:bg-rose-500 text-rose-500 hover:text-white p-3 rounded-full transition-all duration-300 shadow-sm hover:shadow-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                  </svg>
+                </a>
+                <a href="#" className="bg-rose-50 hover:bg-rose-500 text-rose-500 hover:text-white p-3 rounded-full transition-all duration-300 shadow-sm hover:shadow-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </a>
+                <a href="#" className="bg-rose-50 hover:bg-rose-500 text-rose-500 hover:text-white p-3 rounded-full transition-all duration-300 shadow-sm hover:shadow-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8l-8 8m0-8l8 8m4-10v16a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2z" />
+                  </svg>
+                </a>
+                <a href="#" className="bg-rose-50 hover:bg-rose-500 text-rose-500 hover:text-white p-3 rounded-full transition-all duration-300 shadow-sm hover:shadow-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Map Card */}
+        <div className="w-full md:w-1/2">
+          <div className="bg-white rounded-xl p-8 shadow-lg border-t-4 border-rose-400 h-full transform transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+            <h3 className="text-2xl font-bold mb-8 text-rose-700 flex items-center">
+              <span className="bg-rose-100 text-rose-500 p-2 rounded-full mr-3">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </span>
+              Lokasi Kami
+            </h3>
+            <div className="rounded-lg overflow-hidden h-64 bg-rose-50 flex items-center justify-center border border-rose-100 shadow-inner relative">
+              
+              <div className="absolute inset-0 bg-rose-100 opacity-20"></div>
+              <div className="z-10 text-center p-6">
+              <br></br>
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <h4 className="text-lg font-medium text-rose-700 mb-2">Temui Kami di Toko</h4>
+                <p className="text-rose-600">Kunjungi toko fisik kami untuk pengalaman berbelanja yang lebih menyenangkan</p>
+                <button className="mt-6 bg-rose-500 hover:bg-rose-600 text-white py-2 px-6 rounded-full transition-colors duration-300 flex items-center mx-auto">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.553-.832L9 5l5.447-2.724A1 1 0 0115 5.618v10.764a1 1 0 01-1.553.832L9 19l-5.447 2.724A1 1 0 013 16.382V5.618a1 1 0 011.553-.832L9 5l5.447-2.724A1 1 0 0115 5.618v10.764a1 1 0 01-1.553.832L9 19l-5.447 2.724A1 1 0 013 16.382V5.618a1 1 0 011.553-.832L9 5l5.447-2.724A1 1 0 0115 5.618v10.764a1 1 0 01-1.553.832L9 19l-5.447 2.724A1 1 0 013 16.382V5.618" />
+                  </svg>
+                  Dapatkan Arah
+                </button>
+               <br></br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };
